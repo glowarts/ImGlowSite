@@ -5,7 +5,7 @@ const popupImg = popup.querySelector('img');
 const popupTitle = popup.querySelector('h2');
 const popupDesc = popup.querySelector('p');
 const closeBtn = popup.querySelector('.close-btn');
-const imageFolder = 'gallery/';
+const imageFolder = window.location.href + 'gallery/';
 
 function loadImage(path) {
   return new Promise((resolve, reject) => {
@@ -19,8 +19,12 @@ function loadImage(path) {
 async function loadImages() {
     const imagePaths = await fetch(imageFolder).then((res) => res.text());
     const imagePathsArray = imagePaths
-      .match(/href="([^"]+\.(jpg|jpeg|png|gif))"/gi)
-      .map((match) => match.slice(6, -1));
+    .match(/href="([^"]+\.(jpg|jpeg|png|gif))"/gi)
+    ?.map((match) => match.slice(6, -1));
+  if (!imagePathsArray) {
+    // Handle error
+    return;
+  }
     const images = await Promise.all(imagePathsArray.map((path) => loadImage(path)));
     let imagesInRow = 5; // Number of images to display in a row
     if (window.innerWidth < 768) {
