@@ -11,6 +11,7 @@
   --slider-height: 580px;
   --border-color: #7c828527;
   --border-radius: 3px;
+  backdrop-filter: url(commonfilters.svg#filter);
 }
 
 
@@ -690,21 +691,15 @@ a:link {
 
 
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 90%;
+  margin-left: 5%;
+
+  grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
   grid-auto-rows: 1fr;
-  grid-gap: 1rem;
+  grid-gap: 0rem;
 }
 
 .gallery-item {
@@ -731,7 +726,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7));
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
@@ -762,7 +757,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7); /* add dark overlay */
+  backdrop-filter: blur(8px); /* add slight blur */
+  backdrop-filter: grayscale(70%);
   display: none;
 }
 
@@ -782,8 +779,9 @@ body {
 }
 
 .popup-description {
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
+  margin: 1.4rem;
+  font-size: 1.3rem;
+  color: var(--tertiary-text-color);
 }
 
 .popup-close {

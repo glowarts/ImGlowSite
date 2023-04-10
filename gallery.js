@@ -15,8 +15,13 @@ gallery.addEventListener('click', (event) => {
       const popupImage = popup.querySelector('.popup-image');
       popupImage.src = imageUrl;
       popup.style.display = 'block';
+
+      // Close popup when clicking on the image
+      popupImage.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
     }
-  });
+});
 
 // Close popup when clicking on the close button or outside the popup
 popupClose.addEventListener('click', () => {
@@ -28,4 +33,3 @@ popup.addEventListener('click', (event) => {
     popup.style.display = 'none';
   }
 });
-
