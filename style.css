@@ -1,9 +1,12 @@
 :root {
   --body-bg: #121314;
-  --main-text-color: #ffffff;
+  --main-text-color: #F2F2F2;
+  --secondary-text-color: #D3E0E5;
+  --tertiary-text-color: #6c7985;
   --header-bg: #151617;
   --nav-color: #1F2021;
-  --highlight-color: #F0513F;
+  --flair-color: #F0513F;
+  --flair-highlight-color: #FF9B5E;
   --font-family-primary: 'Open Sans', Helvetica, Arial, sans-serif;
   --slider-height: 580px;
   --border-color: #7c828527;
@@ -74,7 +77,12 @@ header {
 
 
 
-/* Navigation styles */
+/* =================               ================ */
+/* =================               ================ */
+/* =================   Navigation  ================ */
+/* =================               ================ */
+/* =================               ================ */
+
 nav {
   display: flex;
   justify-content: center;
@@ -82,53 +90,80 @@ nav {
   border-bottom: var(--border-radius) solid;
   border-top: var(--border-radius) solid;
   border-color: var(--border-color);
-  }
+}
   
-  nav a {
+nav a {
   color: var(--main-text-color);
   text-decoration: none;
   margin: 0 1em;
   font-size: 1.2em;
   font-weight: bold;
   padding: 0.5em 2.5em;
-  }
-  
-  nav a:hover {
-  color: var(--highlight-color);
+  position: relative;
+}
+
+nav a::before, nav a::after {
+  content: "●";
+  position: absolute;
+  color: var(--tertiary-text-color); /* change this to your desired color */
+  font-size: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* add this */
+}
+
+
+nav a::before {
+  left: -1.5em;
+}
+
+nav a::after {
+  right: -1.5em;
+}
+
+nav a:first-of-type::before {
+  display: none;
+}
+
+nav a:last-of-type::after {
+  display: none;
+}
+
+nav a:hover {
+  color: var(--flair-color);
   transition: all 0.2s ease-in-out;
-  }
-  
-  .seperator {
+}
+
+.seperator {
   background-color: transparent;
   display: flex;
   justify-content: center;
   padding: 2em;
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
   nav {
-  flex-wrap: wrap;
-  padding: 1em;
+    flex-wrap: wrap;
+    padding: 1em;
   }
   
   nav a {
-  margin: 1em;
-  font-size: 1em;
-  padding: 0.5em 1.5em;
+    margin: 1em;
+    font-size: 1em;
+    padding: 0.5em 1.5em;
   }
   
   .seperator {
-  padding: 1.5em;
+    padding: 1.5em;
   }
-  }
-  
-  .nav-bg{
+}
+
+.nav-bg{
   background-image: url(assets/ui/tiling_grunge1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  }
-
+}
 
 
 
@@ -143,9 +178,10 @@ nav {
 
 .footer-top {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  height: 8.5em;
   background-color: var(--nav-color);
   border-top: 2px solid;
   border-bottom: 2px solid;
@@ -156,25 +192,34 @@ nav {
   background-position: center;
 }
 
+.footer-top .follow-me {
+  font-size: 1.8em;
+  color: #767676;
+  margin-right: 1em;
+}
+
 .footer-top a {
   margin: 0 10px;
+  height: 50px; /* set a fixed height for the icons */
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.footer-top a i {
-  font-size: 24px;
-  color: white;
+.footer-top .fa-brands {
+  text-decoration: none;
+  color: var(--flair-color);
+  margin: 0.2em;
+  font-size: 2.5em;
+  transition: all 0.3s ease-in-out; /* change transition to transform */
+  vertical-align: middle; /* align the icons vertically */
 }
 
-
-.footer-top ion-icon{
-  font-size: 40px;
-  color: var(--highlight-color);
+.footer-top .fa-brands:hover {
+  color: var(--flair-highlight-color);
+  transform: scale(1.2); /* use transform to scale the icons */
 }
 
-.footer-top .social-icon {
-  width: 37px;
-  padding-bottom: 0;
-}
 
 
 
@@ -191,11 +236,11 @@ nav {
 
 .footer-bottom p {
   margin: 0;
-  color: var(--highlight-color) ;
-  font-size: 14px;
-  z-index: 5;
+  color: var(--flair-color) ;
 
 }
+
+
 
 
 
@@ -254,6 +299,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  text-decoration: none;
 }
 
 .social-link {
@@ -269,10 +315,18 @@ nav {
   border-top: 4px solid;
   border-color: var(--border-color);
 
+  
+}
+
+
+.social-link a:focus, a:active, a:visited, a:link{
+  text-decoration: none;
+  
 }
 
 .social-link.mail {
   background-color: #2B2C2D;
+  text-decoration: none;
 }
 
 .social-link.twitter {
@@ -303,21 +357,20 @@ nav {
 
 .social-links div {
   display: flex;
+  
   flex-direction: column;
   align-items: center;
   margin-bottom: 0px;
 }
 
-.social-icon {
-  width: 48px;
-  height: 48px;
-  padding-bottom: 4px;
-  
-}
+.fa-brands,
+.fa-sharp,
+.fa-solid {
 
-ion-icon {
-  font-size: 64px;
-  color: var(--main-text-color);
+  color: white;
+  font-size: 3.5em;
+  transition: all 0.3s ease-in-out; /* change transition to transform */
+  vertical-align: middle; /* align the icons vertically */
 }
 
 
