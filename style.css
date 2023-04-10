@@ -102,32 +102,6 @@ nav a {
   position: relative;
 }
 
-nav a::before, nav a::after {
-  content: "●";
-  position: absolute;
-  color: var(--tertiary-text-color); /* change this to your desired color */
-  font-size: 0.8em;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* add this */
-}
-
-
-nav a::before {
-  left: -1.5em;
-}
-
-nav a::after {
-  right: -1.5em;
-}
-
-nav a:first-of-type::before {
-  display: none;
-}
-
-nav a:last-of-type::after {
-  display: none;
-}
 
 nav a:hover {
   color: var(--flair-color);
@@ -181,7 +155,7 @@ nav a:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 8.5em;
+  height: 6.5em;
   background-color: var(--nav-color);
   border-top: 2px solid;
   border-bottom: 2px solid;
@@ -231,7 +205,7 @@ nav a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 350px;
+  height: 25em;
 }
 
 .footer-bottom p {
@@ -240,11 +214,29 @@ nav a:hover {
 
 }
 
+@media screen and (max-width: 768px) {
+  .footer-top {
+    height: 3.5em;
+  }
 
+  .footer-top .fa-brands {
+    text-decoration: none;
+    color: var(--flair-color);
+    margin: 0.2em;
+    font-size: 1.5em;
+    transition: all 0.3s ease-in-out; /* change transition to transform */
+    vertical-align: middle; /* align the icons vertically */
+  }
+  .footer-top .follow-me {
+    font-size: 1em;
+    color: #767676;
+    margin-right: 1em;
+  }
+  .footer-bottom {
+    height: 10em;
+}
 
-
-
-
+}
 
 
 
@@ -366,7 +358,6 @@ nav a:hover {
 .fa-brands,
 .fa-sharp,
 .fa-solid {
-
   color: white;
   font-size: 3.5em;
   transition: all 0.3s ease-in-out; /* change transition to transform */
@@ -477,7 +468,11 @@ nav a:hover {
 }
 
 
-/* About: Skills */
+/* =================               ================ */
+/* =================               ================ */
+/* =================    Skills     ================ */
+/* =================               ================ */
+/* =================               ================ */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -532,10 +527,10 @@ nav a:hover {
 .gallery-box img {
   display: block;
   width: 100%;
-  height: 600px; /* Set a fixed height for the images */
+  height: 300px; /* Set a fixed height for the images */
   object-fit: cover; /* Crop the images to fit within the container */
   object-position: center; /* Center the images within the container */
-  transition: transform .3s;
+  transition: transform .3s ease-in-out;
 }
 
 .gallery-box:hover img {
@@ -549,23 +544,36 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(33, 34, 37, 0.685) 100%);
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .4s ease-in-out;
   flex-direction: column; /* Add this line */
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+  transition: border .3s ease-in-out;
+  border: 0px solid transparent;
 }
 
 .gallery-box:hover .gallery-overlay {
   opacity: 1;
+
+  border: 3px solid var(--border-color);
 }
 
 .gallery-overlay h2 {
-  color: #000;
-  text-align: center;
+  color: var(--main-text-color);
+  margin-top: 80%;
+  margin-left: 5%;
   font-size: 24px;
+}
+
+.gallery-overlay p {
+  color: var(--main-text-color);
+  margin-left: 5%;
+
+  
+
 }
 
 .gallery-box a {
@@ -574,18 +582,6 @@ nav a:hover {
   height: 100%;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
