@@ -421,6 +421,11 @@ a:link {
 /* =================               ================ */
 /* =================               ================ */
 
+@font-face {
+  font-family: "Minecraft";
+  src: url("/assets/ui/MinecraftRegular-Bmg3.otf");
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -442,6 +447,18 @@ a:link {
   border-bottom: 3px solid var(--border-color);
   border-top: 3px solid var(--border-color);
   transition: border-color 0.2s ease-in-out;
+}
+
+.project-page h2{
+  font-family: "Minecraft";
+}
+
+.project-page .subheader h2{
+  text-shadow: 2px 2px #184E8E;
+  
+}
+.project-page .subheader p{
+  font-family: "Minecraft";
 }
 
 .project a{
