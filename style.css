@@ -35,7 +35,7 @@ body {
 header {
   background-color: var(--header-bg);
   color: var(--main-text-color);
-  height: 22em;
+  height: 1em;
   padding: 5em;
   padding-bottom: 20em;
   text-align: center;
@@ -48,10 +48,9 @@ header {
 
 .logo-svg {
   padding-bottom: 10px;
-  width: auto;
-  min-width: 20px;
+  width: 30em;
 
-  max-width: 800px;
+  max-width: auto;
 }
 
 .logo-text {
@@ -90,17 +89,18 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  padding: 1.2em;
+  padding: 1em;
   border-bottom: var(--border-radius) solid;
   border-top: var(--border-radius) solid;
   border-color: var(--border-color);
+
 }
 
 nav a {
   color: var(--main-text-color);
   text-decoration: none;
   margin: 0 1em;
-  font-size: 1.6em;
+  font-size: 1.1em;
   font-weight: bold;
   padding: 0.5em 3.5em;
   position: relative;
@@ -116,7 +116,7 @@ nav a:hover {
 .nav-socials a {
   margin-left: 0.01em;
   align-items: end;
-  padding: 0.33em;
+  padding: 0.1em;
 
 }
 
@@ -135,7 +135,6 @@ nav .fa-brands {
 nav .fa-brands:hover {
   color: var(--secondary-text-color);
   transform: scale(1.1);
-  /* use transform to scale the icons */
 }
 
 @media screen and (max-width: 768px) {
@@ -574,6 +573,20 @@ a:link {
 /* =================               ================ */
 /* =================               ================ */
 
+@font-face {
+  font-family: Eurostile;
+  src: url("assets/ui/eurostile.TTF")
+}
+
+@font-face {
+  font-family: Minecraft;
+  src: url("assets/ui/minecraft.otf")
+}
+
+@font-face {
+  font-family: Starcraft;
+  src: url("assets/ui/starcraft.ttf")
+}
 
 
 
@@ -581,12 +594,14 @@ a:link {
   background-image: url(assets/minecraft_subheader.png);
   height: 812px;
   padding-top: 2em;
+  font-family: "Minecraft";
 }
 
 
 
-.project-page .subheader-minecraft h2{
+.project-page .subheader-minecraft h2 {
   text-shadow: 2px 2px #184E8E;
+  font-weight: normal;
 
   
 }
@@ -597,20 +612,15 @@ a:link {
   background-image: url(assets/starcraft_subheader.png);
   background-size: cover;
   height: 812px;
+  
 
 }
 
-.gallery {
-  display: grid;
-  width: 90%;
-  margin-left: 5%;
-  grid-template-columns: repeat(auto-fit, minmax(12%, 1fr));
-  grid-auto-rows: 1fr;
-  grid-gap: 0rem;
-}
+
 
 .starcraft-gallery.gallery{
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+
 
 }
 
@@ -618,11 +628,15 @@ a:link {
 
 .project-page .subheader-starcraft h2{
   text-shadow: 2px 2px #184E8E;
+  font-family: "Starcraft";
+  font-weight: normal;
+
   
 }
 
 .project-page .subheader-starcraft p{
   text-shadow: 2px 2px #153b57;
+  font-family: "Eurostile";
   
 }
 
