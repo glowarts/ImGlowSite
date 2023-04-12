@@ -421,10 +421,7 @@ a:link {
 /* =================               ================ */
 /* =================               ================ */
 
-@font-face {
-  font-family: "Minecraft";
-  src: url("/assets/ui/MinecraftRegular-Bmg3.otf");
-}
+
 
 .projects {
   display: grid;
@@ -449,17 +446,7 @@ a:link {
   transition: border-color 0.2s ease-in-out;
 }
 
-.project-page h2{
-  font-family: "Minecraft";
-}
 
-.project-page .subheader h2{
-  text-shadow: 2px 2px #184E8E;
-  
-}
-.project-page .subheader p{
-  font-family: "Minecraft";
-}
 
 .project a{
   text-decoration: none;
@@ -587,11 +574,61 @@ a:link {
 /* =================               ================ */
 /* =================               ================ */
 
-.subheader {
+@font-face {
+  font-family: "Minecraft";
+  src: url("/assets/ui/MinecraftRegular-Bmg3.otf"),
+}
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("/assets/ui/eurostile.TTF"),
+}
+
+
+.subheader-minecraft {
   background-image: url(assets/mcsky2.png);
   height: 879px;
   padding-top: 2em;
 }
+
+
+
+.project-page .subheader-minecraft h2{
+  text-shadow: 2px 2px #184E8E;
+  font-family: "Minecraft";
+  
+}
+.project-page .subheader-minecraft p{
+  font-family: "Minecraft";
+}
+
+
+.subheader-starcraft {
+  background-image: url(assets/starcraft_subheader.png);
+  background-size: cover;
+  height: 879px;
+  padding-top: 2em;
+}
+
+
+
+.project-page .subheader-starcraft h2{
+  text-shadow: 2px 2px #184E8E;
+  font-family: "Starcraft";
+  
+}
+.project-page .subheader-starcraft p{
+  font-family: "Eurostile";
+  text-shadow: 2px 2px #153b57;
+}
+
+
+.gradient{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, var(--body-bg), transparent);
+}
+
 
 
 .project-page h2{
