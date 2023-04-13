@@ -2,7 +2,7 @@
   --body-bg: #121314;
   --main-text-color: #F2F2F2;
   --secondary-text-color: #D3E0E5;
-  --tertiary-text-color: #6c7985;
+  --tertiary-text-color: #626d76;
   --header-bg: #151617;
   --nav-color: #1F2021;
   --flair-color: #F0513F;
@@ -13,6 +13,13 @@
   --border-radius: 3px;
 }
 
+
+h2 {
+  font-family: "Alumni Sans Pinstripe";
+  font-style: normal;
+  font-size: 4em;
+  
+  }
 
 
 /* Reset styles */
@@ -93,6 +100,7 @@ nav {
   border-bottom: var(--border-radius) solid;
   border-top: var(--border-radius) solid;
   border-color: var(--border-color);
+  font-family: Poppins;
 
 }
 
@@ -159,6 +167,53 @@ nav .fa-brands:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+
+
+/* ========= Projects Nav ========= */
+
+
+
+.projects-nav{
+  width: 100%;
+  height: 5em;
+  border-bottom: var(--border-radius) solid var(--border-color);
+}
+
+.projects-nav-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  gap: 0;
+  height: 100%;
+}
+
+.row {
+  --bs-gutter-y: 1rem;
+  gap: 1em;
+  height: 100%;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  
+}
+
+
+.col {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-radius) solid var(--border-color);
+  border-radius: 0.5em;
+  transition: all .3s ease-in-out;
+  color: var(--tertiary-text-color);
+  cursor: pointer;
+  user-select: none; /* Standard syntax */
+}
+
+.col:hover{
+  border: var(--border-radius) solid #57585a;
+  color: var(--main-text-color)
 }
 
 
@@ -493,11 +548,9 @@ a:link {
 }
 
 .frame h2 {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 30px;
+text-align: center;
+  transform: translateY(-1.7em);
+
   margin-bottom: 40px;
 }
 
@@ -507,11 +560,6 @@ a:link {
   line-height: 1.5;
   margin-bottom: 20px;
   text-align: left;
-}
-
-.frame.light p,
-.frame.light ul {
-  text-align: right;
 }
 
 
@@ -524,7 +572,7 @@ a:link {
   background-color: var(--nav-color);
   background-image: url(assets/ui/tiling_grunge2.png);
   color: #fff;
-  text-align: right;
+  text-align: center;
   border-bottom: var(--border-radius) solid;
   border-top: var(--border-radius) solid;
   border-color: var(--border-color);
@@ -543,23 +591,17 @@ a:link {
 
 .about-me {
   text-align: center;
-  padding-top: 3em;
   margin-left: 25%;
   width: 50%;
   padding-bottom: 3em;
-  font-size: 1.6em;
 
 }
 
-.about-me h2 {
-  font-size: 2.5em;
-  margin-bottom: 1em;
-}
 
-.about-me .text-tertiary {
+.text-tertiary {
   color: var(--tertiary-text-color);
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .about-me .seperator {
@@ -644,7 +686,7 @@ a:link {
 .gradient{
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, var(--body-bg), transparent);
+  background-image: linear-gradient(to top, var(--body-bg) 0%, transparent 95%, var(--body-bg));
   padding-top: 2em;
 }
 
@@ -740,6 +782,11 @@ a:link {
 }
 
 
+.panel p{
+  font-size: 1.2em;
+  font-style: normal;
+}
+
 
 
 
@@ -788,90 +835,6 @@ a:link {
 
 
 
-/* carousel */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-
-  margin: 0 auto;
-  width: 100%;
-  height: var(--slider-height);
-  position: relative;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-
-}
-
-.slide {
-  min-width: 100%;
-  position: relative;
-}
-
-.slide-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#next-btn,
-#prev-btn {
-  cursor: pointer;
-
-  border: none;
-  padding: 3%;
-  color: white;
-}
-
-#next-btn {
-  background: url('/assets/ui/arrow_right.png') no-repeat center/contain;
-  height: 2em;
-
-}
-
-#prev-btn {
-  background: url('/assets/ui/arrow_left.png') no-repeat center/contain;
-}
-
-
-
-
-
-
-
-/* carousel image wrapper */
-
-.image-wrapper-carousel {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  overflow: hidden;
-
-}
-
-.image-wrapper-carousel img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.3s ease-in-out;
-
-}
-
 
 
 
@@ -889,6 +852,7 @@ a:link {
 .gallery-item {
   position: relative;
   overflow: hidden;
+  cursor: zoom-in;
 }
 
 
@@ -1000,4 +964,27 @@ a:link {
 .popup-close:hover {
   color: #fff;
   background-color: #333;
+}
+
+
+
+
+/* ========= CAROUSEL ========= */
+
+.c-item {
+  height: 50em;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.carousel-item {
+  transition: transform 2s ease-in-out;
+}
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 5s;
 }
