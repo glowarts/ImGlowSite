@@ -131,7 +131,7 @@ nav a:hover {
 nav .fa-brands {
   text-decoration: none;
   color: var(--tertiary-text-color);
-  margin-top: 0.4em;
+  margin-top: 0.55em;
   font-size: 1.2em;
   padding: 0;
   transition: all 0.3s ease-in-out;
@@ -177,13 +177,13 @@ nav .fa-brands:hover {
 
 .projects-nav{
   width: 100%;
-  height: 5em;
+  height: 4.4em;
   border-bottom: var(--border-radius) solid var(--border-color);
 }
 
 .projects-nav-container {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   gap: 0;
   height: 100%;
 }
@@ -203,12 +203,13 @@ nav .fa-brands:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--border-radius) solid var(--border-color);
+  border: 2px solid #1a1b1b;
   border-radius: 0.5em;
   transition: all .3s ease-in-out;
-  color: var(--tertiary-text-color);
+  color: #3b3d3f;
   cursor: pointer;
   user-select: none; /* Standard syntax */
+  font-family: Poppins;
 }
 
 .col:hover{
@@ -777,7 +778,8 @@ text-align: center;
   margin-top: 10%;
   margin-bottom: 10%;
 
-  margin-left: 20%;
+  margin-left: 15%;
+  margin-right: 30%;
   text-align:left;
 }
 
