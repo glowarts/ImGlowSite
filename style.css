@@ -7,10 +7,25 @@
   --nav-color: #1F2021;
   --flair-color: #F0513F;
   --flair-highlight-color: #FF9B5E;
+  --flair-active-color: #FFD27F;
   --font-family-primary: 'Open Sans', Helvetica, Arial, sans-serif;
   --slider-height: 60em;
   --border-color: #7c828527;
   --border-radius: 3px;
+  --button-text-color: white;
+}
+
+a {
+  color: var(--flair-color);
+  transition: all .25s ease-in-out;
+}
+
+a:hover {
+  color: var(--flair-highlight-color);
+}
+
+a:active {
+  color: var(--flair-active-color);
 }
 
 
@@ -190,7 +205,7 @@ nav .fa-brands:hover {
 
 .projects-nav {
   width: 100%;
-  height: 4.4em;
+  height: 5.2em;
   border-bottom: var(--border-radius) solid var(--border-color);
 }
 
@@ -205,31 +220,85 @@ nav .fa-brands:hover {
   --bs-gutter-y: 1rem;
   gap: 1em;
   height: 100%;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .8em;
+  padding-bottom: .8em;
 
 }
 
 
 .col {
   text-align: center;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #1a1b1b;
+  border: 2px solid var(--flair-color);
   border-radius: 0.5em;
   transition: all .3s ease-in-out;
-  color: #3b3d3f;
+  color: var(--button-text-color);
   cursor: pointer;
   user-select: none;
-  /* Standard syntax */
   font-family: Poppins;
 }
 
+
+
 .col:hover {
   border: 2px solid #57585a;
+  background-color: var(--flair-color);
+  border: 2px solid var(--flair-color);
+
   color: var(--main-text-color)
 }
+
+.col:active {
+  border: 2px solid var(--flair-active-color);
+}
+
+.col.current {
+  user-select: none;
+  border: none;
+  color:#626568;
+  font-weight: bold;
+  cursor: unset;
+  text-decoration: none;
+}
+
+.col.current:hover {
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  color:#626568;
+  font-weight: bold;
+  cursor: unset;
+  text-decoration: none;
+}
+
+.col.text {
+  border: none;
+  color: #494b4b;
+  margin-right: 0;
+  gap: 0;
+  transform: translateX(2em);
+  margin-top: 1em;
+  text-decoration: none;
+  cursor: unset;
+}
+
+.col.text:hover {
+  border: none;
+  background-color: transparent;
+  color: #494b4b;
+  margin-right: 0;
+  gap: 0;
+  transform: translateX(2em);
+  margin-top: 1em;
+  text-decoration: none;
+  cursor: unset;
+}
+
+
+
 
 
 
