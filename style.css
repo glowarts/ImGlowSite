@@ -239,6 +239,7 @@ nav .fa-brands:hover {
   cursor: pointer;
   user-select: none;
   font-family: Poppins;
+  color:#626568;
 }
 
 
@@ -260,22 +261,25 @@ nav .fa-brands:hover {
 .col.current {
   background-image: none;
   user-select: none;
-  border: none;
-  color:#626568;
+  color: var(--main-text-color);
   font-weight: bold;
   cursor: unset;
   text-decoration: none;
+  border-bottom: 2px solid var(--flair-color);
+  border-top: 2px solid var(--flair-color);
+  background-color:  var(--flair-active-color);
 }
 
 .col.current:hover {
   background-image: none;
   user-select: none;
-  background-color: transparent;
-  border: none;
-  color:#626568;
+  color: var(--main-text-color);
   font-weight: bold;
   cursor: unset;
   text-decoration: none;
+  border-bottom: 2px solid var(--flair-color);
+  border-top: 2px solid var(--flair-color);
+  background-color:  var(--flair-active-color);
 }
 
 .col.text {
@@ -812,7 +816,8 @@ a:link {
 
 
 .project-grid {
-  height: 40em;
+  height: auto;
+  min-height: 25em;
   display: flex;
   gap: 0.5em;
   margin: 0.5em;
@@ -822,7 +827,8 @@ a:link {
 .project-frame .light {
   padding: 0px;
   padding-top: 0px;
-  min-height: 600px;
+  height: auto;
+  min-height: 25em;
   margin-top: 0px;
   position: relative;
 }
@@ -830,6 +836,9 @@ a:link {
 
 .box {
   height: 100%;
+  width: 100%;
+  min-height: 30em;
+
 }
 
 .box p {
@@ -842,36 +851,34 @@ a:link {
 }
 
 .box-image {
-  background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  max-width: 100%;
   overflow: hidden;
-  width: 25%;
-  /* replace 400px with your desired width value */
   border: var(--border-radius) solid var(--border-color);
-  object-fit: cover;
+  
+
 }
 
 .box-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .box-image-description {
   background-color: var(--nav-color);
-  height: 25%;
-  padding: 2em;
+  padding: 1.2em;
 }
 
 .box-image-description h2 {
   font-size: 1.5em;
+  color: var(--tertiary-text-color);
 }
 
 .box-image-description p {
   font-size: 1em;
+  color: var(--main-text-color)
 }
 
 
