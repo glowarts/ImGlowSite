@@ -13,7 +13,53 @@
   --border-color: #7c828527;
   --border-radius: 3px;
   --button-text-color: white;
+
 }
+
+
+
+
+.btn {
+  border-radius: 0;
+  border-bottom: 3px solid var(--flair-active-color);
+  border-top: 3px solid var(--flair-active-color);
+  background-color: var(--nav-color);
+  border-left: none;
+  border-right: none;
+  transition: all .2s ease-in-out;
+  height: 3em;
+  padding-top: 5em;
+  text-align: center;
+
+}
+
+
+
+.btn:hover {
+  border-radius: 0;
+  background-image: linear-gradient(to top, var(--flair-active-color) -1000%, transparent);
+  background-color: var(--nav-color);
+  border-bottom: 3px solid var(--flair-color);
+  border-top: 3px solid var(--flair-color);
+  border-left: none;
+  border-right: none;
+  height: 3em;
+}
+
+
+.btn.active, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  border-radius: 0;
+  background-color:  var(--flair-active-color);
+  border-bottom: 3px solid var(--flair-color);
+  border-top: 3px solid var(--flair-color);
+  border-left: none;
+  border-right: none;
+
+}
+
+
+
+
 
 a {
   color: var(--flair-color);
@@ -224,6 +270,8 @@ nav .fa-brands:hover {
   padding-bottom: .8em;
 
 }
+
+
 
 
 .col {
@@ -953,7 +1001,6 @@ a:link {
   margin-top: 10px;
   font-weight: bold;
 }
-
 
 
 
