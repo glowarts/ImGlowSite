@@ -1061,10 +1061,17 @@ a:link {
 }
 
 .gallery-item h2{
-  font-size: 0.6vw !important;
+  font-size: 0.7vw !important;
   font-family: "Poppins" !important;
   color: var(--flair-color);
+  text-shadow: 0px 4px 50px var(--flair-active-color);
+  background: -webkit-linear-gradient(-86deg, var(--flair-active-color) 5%, #3d1410 91%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+
 }
+
+
 
 .gallery-item p{
   font-size: .8vw !important;
@@ -1136,7 +1143,7 @@ a:link {
 }
 
 .gallery-item:hover .gallery-item-info {
-  transform: translateY(55%);
+  transform: translateY(48%);
 }
 
 
@@ -1615,7 +1622,6 @@ screen and (max-height: 300px) {
   background: -webkit-linear-gradient(-86deg, var(--flair-active-color) 5%, #3d1410 91%);
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
-  color: #232d2d;
 }
 
 
