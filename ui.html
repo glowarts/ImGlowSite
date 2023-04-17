@@ -123,36 +123,29 @@
                 </div>
 
                 <div class="project-frame light">
-                    <div class="project-grid" style="height: 44.5em;">
+                    <h2>Test my font!</h2>
+                    <div class="font-showcase">
 
-                        <div class="box empty">
-                            <div class="panel">
-                                <h2>Worldbuilding with Figma</h2>
-                                <p>To get a better overview, I decided to try to visualize the magic forces into a cosmology chart.
-                                    To achieve this I used a popular interface design tool called Figma.
-                                </p>
+                        <textarea id="inputBox" placeholder="Type something..."></textarea>
+                        <div id="outputBox"></div>
+                    
+                        <script>
+                            const inputBox = document.getElementById('inputBox');
+                            const outputBox = document.getElementById('outputBox');
+                    
+                            inputBox.addEventListener('input', () => {
+                                outputBox.innerText = inputBox.value;
+                            });
+                        </script>
 
-                            </div>
-
-                        </div>
 
 
 
-                        <div class="box box-image" style="flex: 1">
-
-                            <a href="/Worldbuilding/figma.png" class="image">
-                                <img src="/Worldbuilding/figma.png" alt="Image 1"/>
-                            <div class="box-image-description">
-                                <h2>Title</h2>
-                                <p>Description</p>
-                            </div>
-                            <a></a>
-                        </div>
 
                     </div>
 
                 </div>
-
+                <div class="seperator"></div>
                 <div class="gallery" style="margin-left: 0; width: 100%;">
                     <div class="gallery-item">
                         <a href="/Worldbuilding/cosmos.png" class="image">
@@ -260,6 +253,7 @@
 
                 </div>
                 <div class="seperator"></div>
+
 
                 <footer>
                     <div class="footer-top">

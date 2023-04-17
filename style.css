@@ -267,6 +267,7 @@ nav .fa-brands:hover {
   transition: all .2s ease-in-out;
   color: var(--button-text-color);
   cursor: pointer;
+  min-height: 2.5em;
   user-select: none;
   font-family: Poppins;
   color:#626568;
@@ -897,17 +898,53 @@ a:link {
   display: flex;
   gap: 0.5em;
   margin: 0.5em;
-
+  padding: 5em;
 }
 
 .project-frame .light {
-  padding: 0px;
-  padding-top: 0px;
   height: auto;
   min-height: 25em;
-  margin-top: 0px;
-  position: relative;
+
 }
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 5px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--tertiary-text-color);
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: all .6s ease;
+}
+
+.carousel-indicators .active[data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 60px;
+    height: 5px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--flair-color);
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .8;
+    transition: all .6s ease;
+}
+
 
 
 .box {
@@ -1712,4 +1749,51 @@ screen and (max-height: 300px) {
 ::-webkit-scrollbar-thumb {
   background: #373839;
   border-radius: 10px;
+}
+
+
+.font-showcase{
+  width: 80%;
+  height: 30em;
+  margin: 1em;
+  margin-left: 10%;
+  margin-bottom: 15em;
+}
+
+#inputBox {
+  color: var(--tertiary-text-color);
+  width: 30%;
+  font-size: 1vw;
+  padding: 0.5em;
+  border: 3px solid var(--border-color);
+  margin-bottom: 2em;
+  background-color: #121314;
+  transition: all 0.4s ease-in-out;
+  height: 2vh;
+  outline: none;
+  resize: none;
+  border-radius: 0em;
+
+}
+
+#inputBox:focus {
+  width: 100%;
+  font-size: 16px;
+  border: 3px solid var(--flair-active-color);
+  background-color: #121314;
+  outline: none;
+  border-radius: .5em;
+}
+
+#outputBox {
+  font-family: "Kindom";
+  font-size: 2vw;
+  padding: 10px;
+  border: 3px solid var(--border-color);
+  height: auto;
+  background-color: var(--header-bg);
+  min-height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+
 }
