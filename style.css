@@ -529,23 +529,7 @@ nav .fa-brands:hover {
 }
 
 
-/* Set the width of the left and right columns */
-.left-column {
-  width: 70%;
-  padding: 20px;
-}
 
-.right-column {
-  width: 30%;
-  padding: 20px;
-}
-
-/* Style the Twitter section */
-.twitter-container {
-  margin-top: 20px;
-  padding-right: 40px;
-
-}
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
@@ -553,15 +537,14 @@ nav .fa-brands:hover {
     flex-direction: column;
   }
 
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
+
 }
 
 .social-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  margin-left: 5em;
+  margin-right: 5em;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -571,18 +554,42 @@ nav .fa-brands:hover {
 
 .social-link {
   display: flex;
-  margin-top: 40px;
+  margin-top: 45px;
   flex-direction: column;
+  padding-top: 1em;
   justify-content: center;
-  height: 164px;
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 20px;
+  height: 130px;
   border-width: 25px;
   border-bottom: 4px solid;
   border-top: 4px solid;
-  border-color: var(--border-color);
+  border-color: transparent;
+  transition: all .3s ease-in-out;
+}
 
+.social-link p{
+  color: var(--main-text-color);
+  transition: all .3s ease-in-out;
+}
 
+.social-link:hover {
+  transform: scaleY(1.1);
+  border-width: 25px;
+  border-bottom: 4px solid;
+  border-top: 4px solid;
+  border-color: white;
+}
+
+.social-link:hover .fa-brands,
+.social-link:hover .fa-sharp,
+.social-link:hover .fa-solid,
+.social-link:hover p {
+  transform: scaleY(.9);
+  transform: scaleX(1.1);
+  margin-top: .2em;
+}
+
+.social-link:hover p{
+  margin-top: .3em;
 }
 
 
@@ -624,21 +631,12 @@ a:link {
 }
 
 
-
-.social-links div {
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 0px;
-}
-
 .fa-brands,
 .fa-sharp,
 .fa-solid {
   color: white;
   font-size: 3.5em;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   /* change transition to transform */
 }
 
@@ -759,7 +757,7 @@ a:link {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 
@@ -1037,35 +1035,45 @@ a:link {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 15em;
-  margin-left: 15em;
-  margin-right: 15em;
-  justify-items: center;
-  margin-top: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: 5em;
+  margin-left: 10em;
+  margin-right: 10em;
   margin-bottom: 140px;
 }
 
-.skill {
+.skill-card {
+  height: auto;
+  width: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   max-width: 200px;
+  transition: all .2s ease-in-out;
 }
 
-.skill img {
+.skill-card:hover{
+  transform: translateY(-5%);
+  transform: scale(1.1);
+  background: -webkit-linear-gradient(-86deg, #0077C9) 5%, #3d1410 91%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+}
+
+
+.card-image img {
   width: 100%;
-  max-width: 7em;
-  height: auto;
+  max-width: 10em;
   margin-bottom: 10px;
   filter: drop-shadow(0px 10px 10px rgba(18, 19, 20, 0.5));
 }
 
-.skill p {
-  font-size: 18px;
-  margin-top: 10px;
+.card-desc {
+  font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 
