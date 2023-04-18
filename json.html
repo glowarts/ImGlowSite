@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convert Text to JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .message {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Convert Text to JSON</h1>
+  <input type="file" id="fileInput">
+  <label for="fileInput">Choose a text file</label>
+  <button id="convertButton" disabled>Convert to JSON</button>
+  <div class="message" id="message"></div>
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const convertButton = document.getElementById('convertButton');
+    const message = document.getElementById('message');
+
+    fileInput.addEventListener('change', () => {
+      // enable the convert button when a file is selected
+      convertButton.disabled = false;
+    });
+
+    convertButton.addEventListener('click', () => {
+      // disable the convert button and show a message
+      convertButton.disabled = true;
+      message.textContent = 'Converting...';
+
+      // read the selected file
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.readAsText(file, 'utf-8');
+
+      reader.onload = (event) => {
+        const text = event.target.result;
+
+        // split the text into an array of lines
+        const lines = text.split('\n');
+
+        // create an empty array to hold the JSON data
+        const jsonData = [];
+
+        // loop through each line and add it to the JSON array
+        lines.forEach((line) => {
+          jsonData.push({
+            item: line.trim() // you can change the property name to whatever you want
+          });
+        });
+
+        // write the JSON data to a new file
+        const outputFilename = file.name.replace('.txt', '.json');
+        const output = JSON.stringify(jsonData, null, 2);
+        const blob = new Blob([output], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = outputFilename;
+        link.click();
+        URL.revokeObjectURL(url);
+
+        // show a success message
+        message.textContent = 'Conversion complete!';
+      };
+
+      reader.onerror = () => {
+        // show an error message
+        message.textContent = 'An error occurred while reading the file.';
+      };
+    });
+  </script>
+</body>
+</html>
